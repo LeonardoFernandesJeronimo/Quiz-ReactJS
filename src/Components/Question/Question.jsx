@@ -12,11 +12,11 @@ const Question = () => {
       <p>Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}</p>
 
       <h2>{currentQuestion.question}</h2>
-      
+
       <div className={styles.optionsContainer}>
         <p>Opções</p>
       </div>
-      <button>Continuar</button>
+      <button onClick={() => dispatch({ type: 'CHANGE_QUESTION' })}>Continuar</button>
     </div>
   )
 }
