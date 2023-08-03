@@ -1,4 +1,4 @@
-import styles from './Option.module.css'
+import './Option.css'
 
 import { useContext } from 'react'
 import { QuizContext } from '../../context/quiz'
@@ -8,7 +8,14 @@ const Option = ({ option, selectOption, answer }) => {
 
   return (
     <div 
-        className={styles.option} 
+        className={`option 
+            ${quizState.answerSelected && option === answer 
+                ? 'correct' 
+                : ''} 
+            ${quizState.answerSelected && option !== answer 
+                ? 'wrong' 
+                : ''}`
+        }
         onClick={() => selectOption()}
     >
       <p>{option}</p>
